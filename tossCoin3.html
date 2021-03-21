@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<script>
+var flips = 0;
+var heads = 0;
+var tails = 0;
+
+function flip() {
+	var amount = parseInt(prompt("Enter how many flips you want", ""));
+	while (flips < amount){
+  flips += 1;
+  document.forms["infoBox"]["flipsBox"].value = flips;
+  var randSide = Math.floor(1 + (Math.random() * 2));
+  if (randSide == 1) {
+    heads += 1;
+    document.forms["infoBox"]["headsBox"].value = heads;
+	  document.forms["infoBox"]["resultsBox"].value = "heads!";
+  } else {
+    tails += 1;
+    document.forms["infoBox"]["tailsBox"].value = tails;
+	  document.forms["infoBox"]["resultsBox"].value = "tails!";
+  }
+}
+}
+</script>
+</head>
+
+<body>
+<form name="infoBox">
+  <input type="text" name="flipsBox">
+  <lable>flips</lable>
+  <br>
+	<input type="text" name="resultsBox">
+	<lable>result</lable>
+	<br>
+  <input type="text" name="headsBox">
+  <label>heads</label>
+  <br>
+  <input type="text" name="tailsBox">
+  <label>tails</label>
+  <br>
+</form>
+<form>
+  <button type="button" onClick="flip()">Flip A Coin.</button>
+</form>
+</body>
+</html>
